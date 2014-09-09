@@ -1,0 +1,26 @@
+body {
+	padding: 10px;
+}
+.carousel-container {
+	display: inline-block;
+}
+
+ul.thumbnails-carousel {
+	list-style-type: none;
+	padding: 5px 0;
+	text-align: center;
+}
+ul.thumbnails-carousel .center {
+	display: inline-block;
+}
+ul.thumbnails-carousel li {
+	margin-right: 5px;
+	float: left;
+	cursor: pointer;
+}
+.controls-background-reset {
+	background: none !important;
+}
+.active-thumbnail {
+	opacity: 0.5;
+}
