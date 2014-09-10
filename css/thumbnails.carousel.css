@@ -1,13 +1,13 @@
 body {
 	padding: 10px;
 }
-.carousel-container {
+div.carousel-container {
 	display: inline-block;
 }
-
 ul.thumbnails-carousel {
+	padding: 0;
+	margin: 0;
 	list-style-type: none;
-	padding: 5px 0;
 	text-align: center;
 }
 ul.thumbnails-carousel .center {
@@ -22,5 +22,5 @@ ul.thumbnails-carousel li {
 	background: none !important;
 }
 .active-thumbnail {
-	opacity: 0.5;
+	opacity: 0.4;
 }

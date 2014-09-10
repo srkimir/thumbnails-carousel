@@ -61,6 +61,4 @@
 })(window, jQuery);
 
 // Kick it
-$('.thumbnails-carousel').thumbnailsCarousel({
-	center: true
-});
+$('.thumbnails-carousel').thumbnailsCarousel({});
