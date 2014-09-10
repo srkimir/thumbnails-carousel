@@ -13,7 +13,7 @@ While user slide left or right, appropriately thumbnail gets selected and change
   <b>backgroundControl</b>: boolean, default: false<br>
 
 With 'center' option set to <b>true</b> thumbnails will be centered under the carousel parent(image above).<br>
-With 'backgroundControl' option set to <b>false</b> plugin will turn off any controls background gradients.
+With 'backgroundControl' option set to <b>false</b> plugin will turn off any controls background gradients.<br>
 
 Example with <b>center: false</b> and <b>backgroundControl: true</b>.
 ![alt tag](http://s21.postimg.org/iky5x9khj/thumb_carousel2.png)
