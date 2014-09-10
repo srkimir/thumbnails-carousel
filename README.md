@@ -17,3 +17,6 @@ With 'backgroundControl' option set to <b>false</b> plugin will turn off any con
 
 Example with <b>center: false</b> and <b>backgroundControl: true</b>.<br>
 ![alt tag](http://s21.postimg.org/iky5x9khj/thumb_carousel2.png)
+
+<h2>How to use it</h2>
+Check demo folder.
