@@ -1,11 +1,3 @@
-/* body and #carousel-example-generic selectors just for testing */
-body {
-	padding: 10px;
-}
-#carousel-example-generic {
-	display: inline-block;
-}
-/*****************************************************************/
 ul.thumbnails-carousel {
 	padding: 5px 0 0 0;
 	margin: 0;
