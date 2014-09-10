@@ -9,3 +9,5 @@ Dependencies: jQuery & bootstrap.js, include thumbnails.carousel.js after.
 While user slide left or right, appropriately thumbnail gets selected and change its opacity to be different among others thumbnails. User can also click on thumbnails to show the appropriate image on carousel.
 
 <h2>Options</h2>
+center: boolean, default: true
+backgroundControl: boolean, default: false
