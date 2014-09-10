@@ -11,3 +11,5 @@ While user slide left or right, appropriately thumbnail gets selected and change
 <h2>Options</h2>
   <b>center</b>: boolean, default: true<br>
   <b>backgroundControl</b>: boolean, default: false<br>
+
+With 'center' option set to true thumbnails will be centered under the carousel parent(image above).<br>
