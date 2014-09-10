@@ -13,7 +13,7 @@
 		$carouselControls: $(conf.carouselParent + ' .carousel-control')
 	};
 
-	function styles() {
+	function styles() { // init
 		cache.$thumbnailsContainer.width($(conf.carouselParent).width());
 		cache.$thumbnailsLi.first().addClass('active-thumbnail');
 
@@ -28,11 +28,13 @@
 	function refreshOpacities(domEl) {
 		cache.$thumbnailsLi.removeClass('active-thumbnail');
 
-		activeIndex = $(domEl).index();
-		
-		cache.$thumbnailsLi.each(function() {
+		var activeIndex = $(domEl).index();
+
+		cache.$thumbnailsLi.each(function(index) {
+			console.log(index);
 			if(activeIndex + 1 == $(this).data('thumbnail-id')) {
 				$(this).addClass('active-thumbnail');
+				return false;
 			}
 		});
 	}
@@ -56,7 +58,8 @@
 		return this;
 	}
 
+
 })(window, jQuery);
 
 // Kick it
-$('.thumbnails-carousel').thumbnailsCarousel({});
+$('.thumbnails-carousel').thumbnailsCarousel();
