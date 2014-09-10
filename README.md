@@ -19,6 +19,7 @@ Example with <b>center: false</b> and <b>backgroundControl: true</b>.<br>
 ![alt tag](http://s21.postimg.org/iky5x9khj/thumb_carousel2.png)
 
 <h2>How to use it</h2>
+Add jQuery, bootstrap.js, thumbnails.carousel.js and thumbnails.carousel.css<br>
 ```html
 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
   <!-- All other bootstrap carousel code as usual -->
