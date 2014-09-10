@@ -1,11 +1,13 @@
+/* body and #carousel-example-generic selectors just for testing */
 body {
 	padding: 10px;
 }
-div.carousel-container {
+#carousel-example-generic {
 	display: inline-block;
 }
+/*****************************************************************/
 ul.thumbnails-carousel {
-	padding: 0;
+	padding: 5px 0 0 0;
 	margin: 0;
 	list-style-type: none;
 	text-align: center;
@@ -17,10 +19,26 @@ ul.thumbnails-carousel li {
 	margin-right: 5px;
 	float: left;
 	cursor: pointer;
+	vertical-align: top;
 }
 .controls-background-reset {
 	background: none !important;
 }
 .active-thumbnail {
 	opacity: 0.4;
+}
+.scaled-active-thumbnail {
+	-moz-transform: scale(1.15, 1.15) rotate(0.1deg);
+	-ms-transform: scale(1.15, 1.15) rotate(0.1deg);
+	-o-transform: scale(1.15, 1.15) rotate(0.1deg);
+	-webkit-transform:  scale(1.15, 1.15) rotate(0.1deg);
+	transform: scale(1.15, 1.15) rotate(0.1deg);
+	padding-left: 2px;
+	padding-right: 2px;
+}
+.scaled-thumbnails-carousel-fix {
+	padding: 7px 0 0 0 !important;
+}
+.indicators-fix {
+	bottom: 70px;
 }

@@ -4,55 +4,58 @@
 	var conf = {
 		carouselParent: '.carousel',
 		center: true,
-		backgroundControl: false
+		backgroundControl: false,
+		look: 'normal'
 	};
 
 	var cache = {
+		$carouselContainer: $(conf.carouselParent),
 		$thumbnailsContainer: $('.thumbnails-carousel'),
 		$thumbnailsLi: $('.thumbnails-carousel li'),
 		$carouselControls: $(conf.carouselParent + ' .carousel-control')
 	};
 
-	function styles() { // init
-		cache.$thumbnailsContainer.width($(conf.carouselParent).width());
+	function init() {
+		cache.$carouselContainer.find('ol.carousel-indicators').addClass('indicators-fix');
 		cache.$thumbnailsLi.first().addClass('active-thumbnail');
 
-		if(!conf.backgroundControl) cache.$carouselControls.addClass('controls-background-reset');
-		if(conf.center) centerThumbnails();
-	}
+		if(conf.look == 'fancy') {
+			cache.$thumbnailsContainer.addClass('scaled-thumbnails-carousel-fix');
+			cache.$thumbnailsLi.first().addClass('scaled-active-thumbnail');
+		}
 
-	function centerThumbnails() {
-		cache.$thumbnailsLi.wrapAll("<div class='center clearfix'></div>");
+		if(!conf.backgroundControl) {
+			cache.$carouselControls.addClass('controls-background-reset');
+		}
+
+		if(conf.center) {
+			cache.$thumbnailsLi.wrapAll("<div class='center clearfix'></div>");
+		}
 	}
 
 	function refreshOpacities(domEl) {
-		cache.$thumbnailsLi.removeClass('active-thumbnail');
+		cache.$thumbnailsLi.removeClass('active-thumbnail scaled-active-thumbnail');
+		cache.$thumbnailsLi.eq($(domEl).index()).addClass('active-thumbnail');
 
-		var activeIndex = $(domEl).index();
-
-		cache.$thumbnailsLi.each(function(index) {
-			console.log(index);
-			if(activeIndex + 1 == $(this).data('thumbnail-id')) {
-				$(this).addClass('active-thumbnail');
-				return false;
-			}
-		});
-	}
+		if(conf.look == 'fancy') {
+			cache.$thumbnailsLi.eq($(domEl).index()).addClass('scaled-active-thumbnail');
+		}
+	}	
 
 	function bindUiActions() {
-		$(conf.carouselParent).on('slide.bs.carousel', function(e) {
+		cache.$carouselContainer.on('slide.bs.carousel', function(e) {
   			refreshOpacities(e.relatedTarget);
 		});
 
 		cache.$thumbnailsLi.click(function(){
-			$(conf.carouselParent).carousel($(this).data('thumbnail-id') - 1);
+			cache.$carouselContainer.carousel($(this).index());
 		});
 	}
 
 	$.fn.thumbnailsCarousel = function(options) {
 		conf = $.extend(conf, options);
 
-		styles();
+		init();
 		bindUiActions();
 
 		return this;
@@ -62,4 +65,6 @@
 })(window, jQuery);
 
 // Kick it
-$('.thumbnails-carousel').thumbnailsCarousel();
+$('.thumbnails-carousel').thumbnailsCarousel({
+	look: 'fancy'
+});
