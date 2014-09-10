@@ -35,3 +35,14 @@ Add jQuery, bootstrap.js, thumbnails.carousel.js and thumbnails.carousel.css<br>
 	</ul>
 </div>
 ```
+Kick it:
+```javascript
+$('.thumbnails-carousel').thumbnailsCarousel();
+```
+Or with options:
+```javascript
+$('.thumbnails-carousel').thumbnailsCarousel({
+	center: false,
+	backgroundControl: true
+});
+```
