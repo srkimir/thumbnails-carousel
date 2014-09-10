@@ -13,8 +13,6 @@
 		$carouselControls: $(conf.carouselParent + ' .carousel-control')
 	};
 
-	console.log($(conf.carouselParent + ' .carousel-control'));
-
 	function styles() {
 		cache.$thumbnailsContainer.width($(conf.carouselParent).width());
 		cache.$thumbnailsLi.first().addClass('active-thumbnail');
