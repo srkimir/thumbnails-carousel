@@ -2,30 +2,25 @@
 ;(function(window, $, undefined) {
 
 	var conf = {
-		carouselParent: '.carousel',
 		center: true,
-		backgroundControl: false,
-		look: 'normal'
+		backgroundControl: false
 	};
 
 	var cache = {
-		$carouselContainer: $(conf.carouselParent),
-		$thumbnailsContainer: $('.thumbnails-carousel'),
+		$carouselContainer: $('.thumbnails-carousel').parent(),
 		$thumbnailsLi: $('.thumbnails-carousel li'),
-		$carouselControls: $(conf.carouselParent + ' .carousel-control')
+		$controls: $('.thumbnails-carousel').parent().find('.carousel-control')
 	};
 
 	function init() {
 		cache.$carouselContainer.find('ol.carousel-indicators').addClass('indicators-fix');
 		cache.$thumbnailsLi.first().addClass('active-thumbnail');
 
-		if(conf.look == 'fancy') {
-			cache.$thumbnailsContainer.addClass('scaled-thumbnails-carousel-fix');
-			cache.$thumbnailsLi.first().addClass('scaled-active-thumbnail');
-		}
-
 		if(!conf.backgroundControl) {
-			cache.$carouselControls.addClass('controls-background-reset');
+			cache.$carouselContainer.find('.carousel-control').addClass('controls-background-reset');
+		}
+		else {
+			cache.$controls.height(cache.$carouselContainer.find('.carousel-inner').height());
 		}
 
 		if(conf.center) {
@@ -34,12 +29,8 @@
 	}
 
 	function refreshOpacities(domEl) {
-		cache.$thumbnailsLi.removeClass('active-thumbnail scaled-active-thumbnail');
+		cache.$thumbnailsLi.removeClass('active-thumbnail');
 		cache.$thumbnailsLi.eq($(domEl).index()).addClass('active-thumbnail');
-
-		if(conf.look == 'fancy') {
-			cache.$thumbnailsLi.eq($(domEl).index()).addClass('scaled-active-thumbnail');
-		}
 	}	
 
 	function bindUiActions() {
@@ -55,16 +46,12 @@
 	$.fn.thumbnailsCarousel = function(options) {
 		conf = $.extend(conf, options);
 
+		console.log(conf);
+
 		init();
 		bindUiActions();
 
 		return this;
 	}
 
-
 })(window, jQuery);
-
-// Kick it
-$('.thumbnails-carousel').thumbnailsCarousel({
-	look: 'fancy'
-});
