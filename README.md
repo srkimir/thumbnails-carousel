@@ -46,3 +46,4 @@ $('.thumbnails-carousel').thumbnailsCarousel({
 	backgroundControl: true
 });
 ```
+Or visit: http://codepen.io/srkimir/pen/mGbrf
