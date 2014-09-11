@@ -46,8 +46,6 @@
 	$.fn.thumbnailsCarousel = function(options) {
 		conf = $.extend(conf, options);
 
-		console.log(conf);
-
 		init();
 		bindUiActions();
 
