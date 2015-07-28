@@ -28,9 +28,9 @@ Add jQuery, bootstrap.js, thumbnails.carousel.js and thumbnails.carousel.css<br>
   <!-- Add your thumbnails --> 
 	<ul class="thumbnails-carousel clearfix">
 	  <li><img src="images/1_tn.jpg" alt="1_tn.jpg"></li>
-	  <li><img src="images/2_tn.jpg" alt="1_tn.jpg"></li>
-	  <li><img src="images/3_tn.jpg" alt="1_tn.jpg"></li>
-	  <li><img src="images/4_tn.jpg" alt="1_tn.jpg"></li>
+	  <li><img src="images/2_tn.jpg" alt="2_tn.jpg"></li>
+	  <li><img src="images/3_tn.jpg" alt="3_tn.jpg"></li>
+	  <li><img src="images/4_tn.jpg" alt="4_tn.jpg"></li>
 	  ...
 	</ul>
 </div>
