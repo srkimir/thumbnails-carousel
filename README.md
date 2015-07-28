@@ -47,3 +47,8 @@ $('.thumbnails-carousel').thumbnailsCarousel({
 });
 ```
 Or visit: http://codepen.io/srkimir/pen/mGbrf
+
+TODO:
+
+1. The only thing worse than missing alt text is bad alt text. 1_tn.jpg is meaningless.
+   http://webaccess.its.uiowa.edu/workshops/alt/alt006.html
